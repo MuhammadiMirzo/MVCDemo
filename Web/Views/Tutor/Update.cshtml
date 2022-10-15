@@ -1,0 +1,36 @@
+  @model Domain.Entities.Tutor
+
+<form method="post" asp-action="Update">
+    <div class="form-group">
+        <label>Tutor FullName</label>
+        <input asp-for="FullName" type="text" class="form-control"  placeholder="Enter Tutor name">
+        <small id="emailHelp" class="form-text text-muted"></small>
+    </div>
+  
+  <div class="form-group">
+        <label> BackgroundImage</label>
+      <textarea asp-for="BackgroundImage" class="form-control"  placeholder="Enter BackgroundImage"></textarea>
+        <small id="emailHelp" class="form-text text-muted"></small>
+    </div>
+
+    <div class="form-group">
+        <label> Image</label>
+      <textarea asp-for="Image" class="form-control"  placeholder="Enter Image"></textarea>
+        <small id="emailHelp" class="form-text text-muted"></small>
+    </div>
+
+    <div class="form-group">
+        <label> Position</label>
+      <textarea asp-for="Position" class="form-control"  placeholder="Enter Position"></textarea>
+        <small id="emailHelp" class="form-text text-muted"></small>
+    </div>
+
+    <div class="form-group">
+        <label> Experience</label>
+      <textarea asp-for="Experience" class="form-control"  placeholder="EnterExperience"></textarea>
+        <small id="emailHelp" class="form-text text-muted"></small>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>
+

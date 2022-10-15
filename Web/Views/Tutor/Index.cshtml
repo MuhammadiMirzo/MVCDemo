@@ -1,0 +1,66 @@
+@model Domain.Wrapper.Response<List<Domain.Entities.Tutor>>
+
+<a class="btn btn-primary" role="button" href="/Tutor/Add">AddTutor</a>
+<div class="d-flex justify-content-between">
+
+  @foreach (var item in Model.Data)
+  {
+<!-- Rotating card -->
+<div class="card-wrapper" style="width: 400px; height:90%">
+  <div id="card-1" class="card card-rotating text-center">
+
+    
+    <!-- Front Side -->
+    <div class="face front ">
+  
+      <!-- Image-->
+      <div class="card-up">
+        <img class="card-img-top" src="@item.BackgroundImage" alt="Image with a photo of clouds.">
+      </div>
+
+      <!-- Avatar -->
+      <div class="avatar mx-auto white"><img src="@item.Image" class="rounded-circle"
+          alt="Sample avatar image."  style="width:120 px; height:120px;">
+      </div>
+
+      <!-- Content -->
+      <div class="card-body">
+        <h4 class="font-weight-bold mb-3">@item.FullName</h4>
+        <p class="font-weight-bold blue-text">@item.Position</p>
+        <!-- Triggering button -->
+        <a class="rotate-btn" data-card="card-1"><i class="fas fa-redo-alt"></i> Click here to rotate</a>
+      </div>
+    </div>
+    <!-- Front Side -->
+
+    <!-- Back Side -->
+    <div class="face back">
+      <div class="card-body">
+
+        <!-- Content -->
+        <h4 class="font-weight-bold mb-0">About me</h4>
+        <hr>
+        <p>
+          @item.Experience
+          <hr>
+          <!-- Social Icons -->
+          <ul class="list-inline py-2">
+            <li class="list-inline-item"><a class="p-2 fa-lg fb-ic"><i class="fab fa-facebook-f"></i></a></li>
+            <li class="list-inline-item"><a class="p-2 fa-lg tw-ic"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item"><a class="p-2 fa-lg gplus-ic"><i class="fab fa-google-plus-g"></i></a></li>
+            <li class="list-inline-item"><a class="p-2 fa-lg li-ic"><i class="fab fa-linkedin-in"></i></a></li>
+           
+          </ul>
+          <!-- Triggering button -->
+          <a class="rotate-btn" data-card="card-1"><i class="fas fa-undo"></i> Click here to rotate back</a>
+            <div><a href="/Tutor/update/@item.Id">Edit</a> <a href="/Tutor/delete/@item.Id">Delete</a></div>
+            
+      </div>
+    </div>
+    <!-- Back Side -->
+     
+  </div>
+</div>
+<!-- Rotating card -->
+  }
+</div>
